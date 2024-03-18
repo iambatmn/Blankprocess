@@ -1,12 +1,12 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Main" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:h="clr-namespace:Hiye;assembly=DataService.Hiye" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:p="http://schemas.uipath.com/workflow/activities/intelligentocr" xmlns:p1="http://schemas.uipath.com/workflow/activities/ocr" xmlns:p2="http://schemas.uipath.com/workflow/activities/documentunderstanding-ml" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Drawing;assembly=System.Drawing.Common" xmlns:sd1="clr-namespace:System.Drawing;assembly=System.Drawing.Primitives" xmlns:sd2="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uma="clr-namespace:UiPath.MicrosoftOffice365.Activities;assembly=UiPath.MicrosoftOffice365.Activities" xmlns:umac="clr-namespace:UiPath.MicrosoftOffice365.Activities.Contracts;assembly=UiPath.MicrosoftOffice365.Activities" xmlns:umam="clr-namespace:UiPath.MicrosoftOffice365.Activities.Mail;assembly=UiPath.MicrosoftOffice365.Activities" xmlns:umm="clr-namespace:UiPath.MicrosoftOffice365.Models;assembly=UiPath.MicrosoftOffice365" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Main" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:p="http://schemas.uipath.com/workflow/activities/documentunderstanding-ml" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uma="clr-namespace:UiPath.MicrosoftOffice365.Activities;assembly=UiPath.MicrosoftOffice365.Activities" xmlns:umac="clr-namespace:UiPath.MicrosoftOffice365.Activities.Contracts;assembly=UiPath.MicrosoftOffice365.Activities" xmlns:umam="clr-namespace:UiPath.MicrosoftOffice365.Activities.Mail;assembly=UiPath.MicrosoftOffice365.Activities" xmlns:umm="clr-namespace:UiPath.MicrosoftOffice365.Models;assembly=UiPath.MicrosoftOffice365" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property Name="in_Test" Type="InArgument(x:String)" />
-    <x:Property Name="argument1" Type="InArgument(h:Test)" />
+    <x:Property Name="argument1" Type="x:String" />
   </x:Members>
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>680,1676</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>523,521</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -172,37 +172,16 @@
       <AssemblyReference>DataService.Hiye</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="450,1611" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="450,456" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
-      <Variable x:TypeArguments="sd2:DataTable" Name="Dt_test" />
+      <Variable x:TypeArguments="sd:DataTable" Name="Dt_test" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        <x:Boolean x:Key="IsPinned">False</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <p:DigitizeDocument DocumentObjectModel="{x:Null}" DocumentPath="{x:Null}" DocumentText="{x:Null}" ApplyOcrMigrated="True" ApplyOcrOnPdf="Auto" DegreeOfParallelism="-1" DetectCheckboxes="True" DisplayName="Digitize Document" ForceApplyOCR="False" sap:VirtualizedContainerService.HintSize="388,297" sap2010:WorkflowViewState.IdRef="DigitizeDocument_1">
-      <p:DigitizeDocument.OCREngine>
-        <ActivityFunc x:TypeArguments="sd:Image, x:String, scg:IEnumerable(scg:KeyValuePair(sd1:Rectangle, x:String))" Argument1="{x:Reference __ReferenceID0}" Argument2="{x:Reference __ReferenceID1}">
-          <p1:UiPathDocumentOCR Endpoint="{x:Null}" Output="{x:Null}" Text="{x:Null}" UseLocalServer="{x:Null}" ApiKey="Wf4xjetZh850GXs9wO4bdIeKjoGFdm5CXO6Kj5UL99CGUf/FL62aSIpdKAmIGHynA7Pg//Tdjo6UlWb97v0ICg==" ComputeSkewAngle="False" DisplayName="UiPath Document OCR" ExtractWords="True" sap:VirtualizedContainerService.HintSize="312,25" sap2010:WorkflowViewState.IdRef="UiPathDocumentOCR_1" Language="auto" NoopExecution="False" Profile="None" Scale="1" Timeout="100000">
-            <p1:UiPathDocumentOCR.Image>
-              <InArgument x:TypeArguments="sd:Image">
-                <DelegateArgumentValue x:TypeArguments="sd:Image" sap2010:WorkflowViewState.IdRef="DelegateArgumentValue`1_1">
-                  <DelegateInArgument x:TypeArguments="sd:Image" x:Name="__ReferenceID0" Name="Image" />
-                </DelegateArgumentValue>
-              </InArgument>
-            </p1:UiPathDocumentOCR.Image>
-            <p1:UiPathDocumentOCR.PredictionId>
-              <InArgument x:TypeArguments="x:String">
-                <DelegateArgumentValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="DelegateArgumentValue`1_2">
-                  <DelegateInArgument x:TypeArguments="x:String" x:Name="__ReferenceID1" Name="PredictionId" />
-                </DelegateArgumentValue>
-              </InArgument>
-            </p1:UiPathDocumentOCR.PredictionId>
-          </p1:UiPathDocumentOCR>
-        </ActivityFunc>
-      </p:DigitizeDocument.OCREngine>
-    </p:DigitizeDocument>
     <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="388,25" sap2010:WorkflowViewState.IdRef="CommentOut_1">
       <ui:CommentOut.Body>
         <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="450,136" sap2010:WorkflowViewState.IdRef="Sequence_3">
@@ -251,33 +230,84 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:CommentOut>
-    <p2:MachineLearningExtractorTrainer AvailableMLSkills="{x:Null}" Configuration="{x:Null}" DocumentObjectModel="{x:Null}" DocumentPath="{x:Null}" DocumentText="{x:Null}" Endpoint="{x:Null}" HumanValidatedData="{x:Null}" OutputFolder="{x:Null}" PersistenceId="{x:Null}" PublicDatasetApiKey="{x:Null}" PublicDatasetEndpoint="{x:Null}" SelectedMLSkill="{x:Null}" DisplayName="Machine Learning Extractor Trainer" sap:VirtualizedContainerService.HintSize="388,350" sap2010:WorkflowViewState.IdRef="MachineLearningExtractorTrainer_2" RetryOnFailure="True" SelectedDataset="Test" SelectedProject="AI_Tranning" Timeout="100000">
-      <p2:MachineLearningExtractorTrainer.AvailableDatasets>
-        <scg:List x:TypeArguments="x:String" Capacity="2">
-          <x:String>Test</x:String>
-          <x:String>test2</x:String>
-        </scg:List>
-      </p2:MachineLearningExtractorTrainer.AvailableDatasets>
-      <p2:MachineLearningExtractorTrainer.AvailableProjects>
-        <scg:List x:TypeArguments="x:String" Capacity="2">
-          <x:String>AI_Tranning</x:String>
-          <x:String>z</x:String>
-        </scg:List>
-      </p2:MachineLearningExtractorTrainer.AvailableProjects>
-    </p2:MachineLearningExtractorTrainer>
-    <p2:MachineLearningExtractorTrainer AvailableDatasets="{x:Null}" AvailableMLSkills="{x:Null}" Configuration="{x:Null}" DocumentObjectModel="{x:Null}" DocumentPath="{x:Null}" DocumentText="{x:Null}" Endpoint="{x:Null}" HumanValidatedData="{x:Null}" OutputFolder="{x:Null}" PersistenceId="{x:Null}" PublicDatasetApiKey="{x:Null}" PublicDatasetEndpoint="{x:Null}" SelectedDataset="{x:Null}" SelectedMLSkill="{x:Null}" SelectedProject="{x:Null}" DisplayName="Machine Learning Extractor Trainer" sap:VirtualizedContainerService.HintSize="388,350" sap2010:WorkflowViewState.IdRef="MachineLearningExtractorTrainer_1" RetryOnFailure="True" Timeout="100000">
-      <p2:MachineLearningExtractorTrainer.AvailableProjects>
-        <scg:List x:TypeArguments="x:String" Capacity="2">
-          <x:String>AI_Tranning</x:String>
-          <x:String>z</x:String>
-        </scg:List>
-      </p2:MachineLearningExtractorTrainer.AvailableProjects>
-    </p2:MachineLearningExtractorTrainer>
-    <p2:MachineLearningExtractor Configuration="{x:Null}" DocumentBounds="{x:Null}" DocumentObjectModel="{x:Null}" DocumentPath="{x:Null}" DocumentText="{x:Null}" Endpoint="{x:Null}" ExtractorDocumentType="{x:Null}" ExtractorResult="{x:Null}" PersistenceId="{x:Null}" PredictionId="{x:Null}" SelectedMLSkill="{x:Null}" ApiKey="Wf4xjetZh850GXs9wO4bdIeKjoGFdm5CXO6Kj5UL99CGUf/FL62aSIpdKAmIGHynA7Pg//Tdjo6UlWb97v0ICg==" DisplayName="Machine Learning Extractor" sap:VirtualizedContainerService.HintSize="388,193" sap2010:WorkflowViewState.IdRef="MachineLearningExtractor_1" RetryOnFailure="True" Timeout="100000" UseServerSideOCR="False">
-      <p2:MachineLearningExtractor.AvailableMLSkills>
-        <scg:List x:TypeArguments="x:String" Capacity="0" />
-      </p2:MachineLearningExtractor.AvailableMLSkills>
-    </p2:MachineLearningExtractor>
+    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="388,25" sap2010:WorkflowViewState.IdRef="CommentOut_2">
+      <ui:CommentOut.Body>
+        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="450,461" sap2010:WorkflowViewState.IdRef="Sequence_4">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <p:MachineLearningExtractorTrainer AvailableMLSkills="{x:Null}" Configuration="{x:Null}" DocumentObjectModel="{x:Null}" DocumentPath="{x:Null}" DocumentText="{x:Null}" Endpoint="{x:Null}" HumanValidatedData="{x:Null}" OutputFolder="{x:Null}" PersistenceId="{x:Null}" PublicDatasetApiKey="{x:Null}" PublicDatasetEndpoint="{x:Null}" SelectedMLSkill="{x:Null}" DisplayName="Machine Learning Extractor Trainer" sap:VirtualizedContainerService.HintSize="388,350" sap2010:WorkflowViewState.IdRef="MachineLearningExtractorTrainer_2" RetryOnFailure="True" SelectedDataset="Test" SelectedProject="AI_Tranning" Timeout="100000">
+            <p:MachineLearningExtractorTrainer.AvailableDatasets>
+              <scg:List x:TypeArguments="x:String" Capacity="2">
+                <x:String>Test</x:String>
+                <x:String>test2</x:String>
+              </scg:List>
+            </p:MachineLearningExtractorTrainer.AvailableDatasets>
+            <p:MachineLearningExtractorTrainer.AvailableProjects>
+              <scg:List x:TypeArguments="x:String" Capacity="2">
+                <x:String>AI_Tranning</x:String>
+                <x:String>z</x:String>
+              </scg:List>
+            </p:MachineLearningExtractorTrainer.AvailableProjects>
+          </p:MachineLearningExtractorTrainer>
+        </Sequence>
+      </ui:CommentOut.Body>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:CommentOut>
+    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="388,25" sap2010:WorkflowViewState.IdRef="CommentOut_3">
+      <ui:CommentOut.Body>
+        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="450,461" sap2010:WorkflowViewState.IdRef="Sequence_5">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <p:MachineLearningExtractorTrainer AvailableDatasets="{x:Null}" AvailableMLSkills="{x:Null}" Configuration="{x:Null}" DocumentObjectModel="{x:Null}" DocumentPath="{x:Null}" DocumentText="{x:Null}" Endpoint="{x:Null}" HumanValidatedData="{x:Null}" OutputFolder="{x:Null}" PersistenceId="{x:Null}" PublicDatasetApiKey="{x:Null}" PublicDatasetEndpoint="{x:Null}" SelectedDataset="{x:Null}" SelectedMLSkill="{x:Null}" SelectedProject="{x:Null}" DisplayName="Machine Learning Extractor Trainer" sap:VirtualizedContainerService.HintSize="388,350" sap2010:WorkflowViewState.IdRef="MachineLearningExtractorTrainer_1" RetryOnFailure="True" Timeout="100000">
+            <p:MachineLearningExtractorTrainer.AvailableProjects>
+              <scg:List x:TypeArguments="x:String" Capacity="2">
+                <x:String>AI_Tranning</x:String>
+                <x:String>z</x:String>
+              </scg:List>
+            </p:MachineLearningExtractorTrainer.AvailableProjects>
+          </p:MachineLearningExtractorTrainer>
+        </Sequence>
+      </ui:CommentOut.Body>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:CommentOut>
+    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="388,25" sap2010:WorkflowViewState.IdRef="CommentOut_4">
+      <ui:CommentOut.Body>
+        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="450,304" sap2010:WorkflowViewState.IdRef="Sequence_6">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <p:MachineLearningExtractor Configuration="{x:Null}" DocumentBounds="{x:Null}" DocumentObjectModel="{x:Null}" DocumentPath="{x:Null}" DocumentText="{x:Null}" Endpoint="{x:Null}" ExtractorDocumentType="{x:Null}" ExtractorResult="{x:Null}" PersistenceId="{x:Null}" PredictionId="{x:Null}" SelectedMLSkill="{x:Null}" ApiKey="Wf4xjetZh850GXs9wO4bdIeKjoGFdm5CXO6Kj5UL99CGUf/FL62aSIpdKAmIGHynA7Pg//Tdjo6UlWb97v0ICg==" DisplayName="Machine Learning Extractor" sap:VirtualizedContainerService.HintSize="388,193" sap2010:WorkflowViewState.IdRef="MachineLearningExtractor_1" RetryOnFailure="True" Timeout="100000" UseServerSideOCR="False">
+            <p:MachineLearningExtractor.AvailableMLSkills>
+              <scg:List x:TypeArguments="x:String" Capacity="0" />
+            </p:MachineLearningExtractor.AvailableMLSkills>
+          </p:MachineLearningExtractor>
+        </Sequence>
+      </ui:CommentOut.Body>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:CommentOut>
     <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="388,85" sap2010:WorkflowViewState.IdRef="MessageBox_2" Text="[in_Test]" />
   </Sequence>
 </Activity>
