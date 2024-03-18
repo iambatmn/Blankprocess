@@ -4,17 +4,29 @@
   "description": "Blank Process",
   "main": "Main.xaml",
   "dependencies": {
+    "UiPath.DataService.Activities": "[23.10.0]",
+    "UiPath.DocumentUnderstanding.Activities": "[2.4.1]",
+    "UiPath.DocumentUnderstanding.ML.Activities": "[1.24.0]",
     "UiPath.Excel.Activities": "[2.23.0-preview]",
+    "UiPath.IntelligentOCR.Activities": "[6.14.1]",
     "UiPath.Mail.Activities": "[1.21.1]",
+    "UiPath.MicrosoftOffice365.Activities": "[2.5.7]",
     "UiPath.System.Activities": "[23.12.0-preview]",
     "UiPath.Testing.Activities": "[23.12.0-preview]",
     "UiPath.UIAutomation.Activities": "[23.10.8]"
   },
   "webServices": [],
-  "entitiesStores": [],
+  "entitiesStores": [
+    {
+      "serviceDocument": ".entities/EntitiesStore.json",
+      "tenantName": "MohammedDefault",
+      "namespace": "BlankProcess",
+      "uniqueReference": "32ubDsyvLcfS8Y2hr/RXRTLLh/8hzqZjka0Qe3HSLgc="
+    }
+  ],
   "schemaVersion": "4.0",
   "studioVersion": "23.12.0.0",
-  "projectVersion": "1.0.2",
+  "projectVersion": "1.0.162549368",
   "runtimeOptions": {
     "autoDispose": false,
     "netFrameworkLazyLoading": false,
@@ -43,7 +55,16 @@
     "processOptions": {
       "ignoredFiles": []
     },
-    "fileInfoCollection": [],
+    "fileInfoCollection": [
+      {
+        "editingStatus": "Publishable",
+        "testCaseId": "99eac800-9660-417e-aa1b-18c5a149b9e4",
+        "dataVariationFilePath": ".variations\\AramcoStatus_Sheet1.json",
+        "testCaseType": "TestCase",
+        "executionTemplateInvokeIsolated": false,
+        "fileName": "TestCase.xaml"
+      }
+    ],
     "saveToCloud": false
   },
   "expressionLanguage": "VisualBasic",
